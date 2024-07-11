@@ -1,6 +1,6 @@
 ﻿namespace SwiftSendUI
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Form1
+            // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(489, 246);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Dashboard";
+            Text = "SwiftSend";
             ResumeLayout(false);
         }
 
