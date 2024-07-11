@@ -28,18 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
+            formHeader = new Label();
+            apiLabel = new Label();
+            apiText = new TextBox();
+            callApi = new Button();
+            resultsText = new TextBox();
+            statusStrip = new StatusStrip();
+            systemStatus = new ToolStripStatusLabel();
+            resultsLabel = new Label();
+            statusStrip.SuspendLayout();
             SuspendLayout();
+            // 
+            // formHeader
+            // 
+            formHeader.AutoSize = true;
+            formHeader.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            formHeader.Location = new Point(28, 9);
+            formHeader.Name = "formHeader";
+            formHeader.Size = new Size(172, 47);
+            formHeader.TabIndex = 0;
+            formHeader.Text = "SwiftSend";
+            // 
+            // apiLabel
+            // 
+            apiLabel.AutoSize = true;
+            apiLabel.Location = new Point(28, 88);
+            apiLabel.Name = "apiLabel";
+            apiLabel.Size = new Size(53, 32);
+            apiLabel.TabIndex = 1;
+            apiLabel.Text = "API:";
+            // 
+            // apiText
+            // 
+            apiText.Location = new Point(77, 88);
+            apiText.Name = "apiText";
+            apiText.Size = new Size(660, 39);
+            apiText.TabIndex = 2;
+            // 
+            // callApi
+            // 
+            callApi.Location = new Point(743, 88);
+            callApi.Name = "callApi";
+            callApi.Size = new Size(110, 39);
+            callApi.TabIndex = 3;
+            callApi.Text = "Send";
+            callApi.UseVisualStyleBackColor = true;
+            callApi.Click += callApi_Click;
+            // 
+            // resultsText
+            // 
+            resultsText.Location = new Point(28, 179);
+            resultsText.Multiline = true;
+            resultsText.Name = "resultsText";
+            resultsText.ReadOnly = true;
+            resultsText.ScrollBars = ScrollBars.Both;
+            resultsText.Size = new Size(825, 321);
+            resultsText.TabIndex = 4;
+            // 
+            // statusStrip
+            // 
+            statusStrip.Items.AddRange(new ToolStripItem[] { systemStatus });
+            statusStrip.Location = new Point(0, 495);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(908, 30);
+            statusStrip.TabIndex = 5;
+            statusStrip.Text = "statusStrip1";
+            // 
+            // systemStatus
+            // 
+            systemStatus.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            systemStatus.Name = "systemStatus";
+            systemStatus.Size = new Size(62, 25);
+            systemStatus.Text = "Ready";
+            // 
+            // resultsLabel
+            // 
+            resultsLabel.AutoSize = true;
+            resultsLabel.Location = new Point(28, 144);
+            resultsLabel.Name = "resultsLabel";
+            resultsLabel.Size = new Size(88, 32);
+            resultsLabel.TabIndex = 6;
+            resultsLabel.Text = "Results";
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(489, 246);
+            ClientSize = new Size(908, 525);
+            Controls.Add(resultsLabel);
+            Controls.Add(statusStrip);
+            Controls.Add(resultsText);
+            Controls.Add(callApi);
+            Controls.Add(apiText);
+            Controls.Add(apiLabel);
+            Controls.Add(formHeader);
+            Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(6);
             Name = "Dashboard";
             Text = "SwiftSend";
+            Load += Dashboard_Load;
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label formHeader;
+        private Label apiLabel;
+        private TextBox apiText;
+        private Button callApi;
+        private TextBox resultsText;
+        private StatusStrip statusStrip;
+        private Label resultsLabel;
+        private ToolStripStatusLabel systemStatus;
     }
 }
