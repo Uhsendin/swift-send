@@ -17,10 +17,17 @@ public partial class Dashboard : Form
 
     private async void callApi_Click(object sender, EventArgs e)
     {
-            // validate input
+            systemStatus.Text = "Calling API...";
+            resultsText.Text = string.Empty;
+
+            if (api.IsValidUrl(apiText.Text) == false)
+        {
+            systemStatus.Text = "Invalid URL";
+            return;
+        }
+
         try
         {
-            systemStatus.Text = "Calling API...";
             resultsText.Text = await api.CallApiAsync(apiText.Text);
             systemStatus.Text = "Ready";
         }
