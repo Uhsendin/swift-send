@@ -1,7 +1,10 @@
+using SwiftSendLibrary;
+
 namespace SwiftSendUI;
 
 public partial class Dashboard : Form
 {
+    private readonly ApiAccess api = new();
     public Dashboard()
     {
         InitializeComponent();
@@ -18,10 +21,7 @@ public partial class Dashboard : Form
         try
         {
             systemStatus.Text = "Calling API...";
-            // replace with API call
-            await Task.Delay(2000);
-        
-
+            resultsText.Text = await api.CallApiAsync(apiText.Text);
             systemStatus.Text = "Ready";
         }
         catch (Exception ex)

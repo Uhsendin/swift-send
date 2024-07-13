@@ -60,6 +60,7 @@
             // 
             // apiText
             // 
+            apiText.BorderStyle = BorderStyle.FixedSingle;
             apiText.Location = new Point(77, 88);
             apiText.Name = "apiText";
             apiText.Size = new Size(660, 39);
@@ -77,6 +78,8 @@
             // 
             // resultsText
             // 
+            resultsText.BackColor = Color.White;
+            resultsText.BorderStyle = BorderStyle.FixedSingle;
             resultsText.Location = new Point(28, 179);
             resultsText.Multiline = true;
             resultsText.Name = "resultsText";
@@ -88,11 +91,11 @@
             // statusStrip
             // 
             statusStrip.Items.AddRange(new ToolStripItem[] { systemStatus });
-            statusStrip.Location = new Point(0, 495);
+            statusStrip.Location = new Point(0, 518);
             statusStrip.Name = "statusStrip";
             statusStrip.Size = new Size(908, 30);
             statusStrip.TabIndex = 5;
-            statusStrip.Text = "statusStrip1";
+            statusStrip.Text = "System Status";
             // 
             // systemStatus
             // 
@@ -114,7 +117,8 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(908, 525);
+            BackColor = Color.White;
+            ClientSize = new Size(908, 548);
             Controls.Add(resultsLabel);
             Controls.Add(statusStrip);
             Controls.Add(resultsText);
