@@ -2,7 +2,7 @@
 
 namespace SwiftSendLibrary;
 
-public class ApiAccess
+public class ApiAccess : IApiAccess
 {
     private readonly HttpClient client = new();
     public async Task<string> CallApiAsync(string url, bool formatOutput = true, HttpsAction action = HttpsAction.GET)
@@ -14,9 +14,9 @@ public class ApiAccess
             string json = await response.Content.ReadAsStringAsync();
             if (formatOutput)
             {
-            var jsonElement = JsonSerializer.Deserialize<JsonElement>(json);
-            json = JsonSerializer.Serialize(jsonElement,
-                new JsonSerializerOptions { WriteIndented = true });
+                var jsonElement = JsonSerializer.Deserialize<JsonElement>(json);
+                json = JsonSerializer.Serialize(jsonElement,
+                    new JsonSerializerOptions { WriteIndented = true });
             }
             return json;
         }
@@ -24,7 +24,7 @@ public class ApiAccess
         {
             return $"Error: {response.StatusCode}";
         }
-        
+
     }
 
     public bool IsValidUrl(string url)
